@@ -9,7 +9,7 @@ import UIKit
 import Parse
 import AlamofireImage
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    var numberOfPosts = 3
     var posts = [PFObject]()
     let myRefreshControl = UIRefreshControl()
     @IBOutlet weak var tableView: UITableView!
@@ -27,8 +27,9 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidAppear(true)
         
         let query = PFQuery(className: "Posts")
+        query.order(byDescending: "updatedAt")
         query.includeKey("author")
-        query.limit = 20
+        query.limit = numberOfPosts
         
         query.findObjectsInBackground { (posts, error) in
             if posts != nil {
@@ -67,5 +68,29 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         return cell
     }
+    func loadMorePosts(){
+        
+        let query = PFQuery(className: "Posts")
+        query.order(byDescending: "updatedAt")
+        query.includeKey("author")
+        numberOfPosts = numberOfPosts + 3
+        query.limit = numberOfPosts
+        
+        query.findObjectsInBackground { (posts, error) in
+            if posts != nil {
+                self.posts = posts!
+                self.tableView.reloadData()
+            }
+        }
+        
+    }
+    
+     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row + 1 == posts.count{
+            loadMorePosts()
+            print("Loaded new Posts beyond the given one.")
+        }
+    }
+    
 
 }
