@@ -9,7 +9,7 @@ import UIKit
 import Parse
 import AlamofireImage
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    var numberOfPosts = 3
+    var numberOfPosts = 10
     var posts = [PFObject]()
     let myRefreshControl = UIRefreshControl()
     @IBOutlet weak var tableView: UITableView!
@@ -18,6 +18,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         tableView.delegate = self
         tableView.dataSource = self
+        myRefreshControl.tintColor = .yellow
         myRefreshControl.addTarget(self, action: #selector(viewDidAppear(_:)), for: .valueChanged)
         tableView.refreshControl = myRefreshControl
 
@@ -36,6 +37,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.posts = posts!
                 self.tableView.reloadData()
             }
+            
             self.myRefreshControl.endRefreshing()
         }
     }
@@ -73,7 +75,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         let query = PFQuery(className: "Posts")
         query.order(byDescending: "updatedAt")
         query.includeKey("author")
-        numberOfPosts = numberOfPosts + 3
+        numberOfPosts = numberOfPosts + 10
         query.limit = numberOfPosts
         
         query.findObjectsInBackground { (posts, error) in
