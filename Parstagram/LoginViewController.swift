@@ -25,7 +25,7 @@ class LoginViewController: UIViewController {
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             }
             else {
-                print("Error: \(error?.localizedDescription)")
+                print("Error: \(String(describing: error?.localizedDescription))")
             }
         }
             // other fields can be set just like with PFObject
@@ -33,6 +33,7 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func onSignIn(_ sender: Any) {
+        print("Hie")
         let username = usernameField.text!
         let password = passwordField.text!
         
@@ -41,6 +42,7 @@ class LoginViewController: UIViewController {
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             }
             else{
+                print("There is an error somw")
                 print("Error: \(error?.localizedDescription)")
 
             }
