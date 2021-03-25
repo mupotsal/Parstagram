@@ -11,7 +11,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Parstagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="Parstagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -154,6 +154,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZPK-1N-jLn">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="foz-hX-ag8">
+                            <connections>
+                                <action selector="onLogout:" destination="neA-V7-uRu" id="9ZV-uh-W5N"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="+" image="insta_camera_btn.png" id="ynZ-RX-2Fm">
                             <connections>
                                 <segue destination="XWS-hm-65F" kind="presentation" id="4Et-16-6nM"/>
@@ -221,7 +226,7 @@
         <!--Navigation Controller-->
         <scene sceneID="BWf-lQ-r3D">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rDW-PU-7Fi" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="FeedNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="rDW-PU-7Fi" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="X5A-qJ-DT4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
