@@ -147,6 +147,42 @@
                                             <outlet property="usernameLabel" destination="mvh-1D-uP3" id="dqS-wp-A9l"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCell" id="vaN-MY-UXR" customClass="CommentCell" customModule="Parstagram" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="359" width="414" height="37"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vaN-MY-UXR" id="eJ5-oi-Xh4">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="37"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Liberty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N21-NB-vkI">
+                                                    <rect key="frame" x="16" y="8" width="55.5" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a comment" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJE-bJ-2tl">
+                                                    <rect key="frame" x="79.5" y="8" width="138.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="mJE-bJ-2tl" firstAttribute="leading" secondItem="N21-NB-vkI" secondAttribute="trailing" constant="8" id="BAM-74-3CI"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mJE-bJ-2tl" secondAttribute="trailing" constant="8" id="Ewz-4S-LDc"/>
+                                                <constraint firstItem="mJE-bJ-2tl" firstAttribute="top" secondItem="eJ5-oi-Xh4" secondAttribute="top" constant="8" id="Jqi-N7-RHP"/>
+                                                <constraint firstItem="N21-NB-vkI" firstAttribute="top" secondItem="eJ5-oi-Xh4" secondAttribute="top" constant="8" id="Tp8-OA-XU8"/>
+                                                <constraint firstItem="mJE-bJ-2tl" firstAttribute="leading" secondItem="N21-NB-vkI" secondAttribute="trailing" constant="8" id="XHx-jb-KZd"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="N21-NB-vkI" secondAttribute="bottom" constant="8" id="lcA-HB-piC"/>
+                                                <constraint firstItem="N21-NB-vkI" firstAttribute="leading" secondItem="eJ5-oi-Xh4" secondAttribute="leading" constant="16" id="pDg-em-bWc"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="mJE-bJ-2tl" secondAttribute="bottom" constant="8" id="xut-Ky-Usk"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="commentLabel" destination="mJE-bJ-2tl" id="4Dp-yg-X6A"/>
+                                            <outlet property="nameLabel" destination="N21-NB-vkI" id="Vee-u8-v5I"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
